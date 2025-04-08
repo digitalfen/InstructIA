@@ -10,6 +10,10 @@ Instructa is installed globally as a command-line tool:
 npm install -g instructa
 ```
 
+## Documentation
+
+The complete documentation is available at: [https://digitalfen.github.io/Instructa/](https://digitalfen.github.io/Instructa/)
+
 ## Usage
 
 ### Initialization
