@@ -85,26 +85,7 @@ Key features:
 
 Instructa supports multiple languages:
 - English (United States) (en-US)
-- English (United Kingdom) (en-GB)
 - Portuguese (Brazil) (pt-BR)
-- Portuguese (Portugal) (pt-PT)
-- Spanish (es-ES)
-- French (fr-FR)
-- German (de-DE)
-- Japanese (ja-JP)
-- Chinese (zh-CN)
-- Russian (ru-RU)
-- Polish (pl-PL)
-- Italian (it-IT)
-- Dutch (nl-NL)
-- Swedish (sv-SE)
-- Danish (da-DK)
-- Korean (ko-KR)
-- Arabic (ar-SA)
-- Hindi (hi-IN)
-- Turkish (tr-TR)
-- Greek (el-GR)
-- Hungarian (hu-HU)
 
 To change the language during installation:
 ```bash
