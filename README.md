@@ -1,50 +1,50 @@
-# Instructa Framework
+# InstructIA
 
-A powerful framework based on POD (Prompt-Oriented Development) for automating AI-driven instructions and actions.
+A powerful Context Management System based on POD (Prompt-Oriented Development) for automating AI-driven instructions and actions.
 
 ## Installation
 
-Instructa is installed globally as a command-line tool:
+InstructIA is installed globally as a command-line tool:
 
 ```bash
-npm install -g instructa
+npm install -g instructia
 ```
 
 ## Documentation
 
-The complete documentation is available at: [https://digitalfen.github.io/Instructa/](https://digitalfen.github.io/Instructa/)
+The complete documentation is available at: [https://digitalfen.github.io/InstructIA/](https://digitalfen.github.io/InstructIA/)
 
 ## Usage
 
 ### Initialization
 
-To start using Instructa, you need to initialize a new project. The `init` command will set up everything you need:
+To start using InstructIA, you need to initialize a new project. The `init` command will set up everything you need:
 
 ```bash
 # Initialize with default language (en-US)
-instructa init
+instructia init
 
 # Initialize with specific language
-instructa init --language=pt-BR
+instructia init --language=pt-BR
 ```
 
 #### Initialization Options
 
 - `--language`: Sets the project language (default: en-US)
   ```bash
-  instructa init --language=pt-BR
+  instructia init --language=pt-BR
   ```
 
 ### Project Structure
 
-After initialization, Instructa will create the following directory structure:
+After initialization, InstructIA will create the following directory structure:
 
 ```
 your-project/
 ├── prompts/           # Directory for your prompts
 ├── actions/           # Directory for your actions
 ├── config/            # Configuration files
-└── instructa.json     # Main configuration file
+└── instructia.json     # Main configuration file
 ```
 
 ### Prompt Development
@@ -79,9 +79,9 @@ export const action = {
 };
 ```
 
-## What is Instructa?
+## What is InstructIA?
 
-Instructa is a framework that enables the creation of structured, modular, and reusable prompts for AI systems. It provides a standardized environment for managing context, executing predefined actions, and extending functionality through a keyword-based command system.
+InstructIA is a framework that enables the creation of structured, modular, and reusable prompts for AI systems. It provides a standardized environment for managing context, executing predefined actions, and extending functionality through a keyword-based command system.
 
 The framework is particularly useful for IDEs with integrated AI capabilities (like Cursor and WindSurf), where it helps generate and manage context for AI consumption.
 
@@ -97,9 +97,9 @@ Key aspects of POD:
 - **Context Management**: Organized storage and retrieval of information
 - **Semantic Clarity**: Clear meaning and purpose for each instruction
 
-### Instructa Framework
+### InstructIA Framework
 
-Instructa is a POD-based framework that contextualizes predefined commands and actions while enabling the creation of new ones. It establishes a structured directory system for AI context management and implements a keyword-triggered action system.
+InstructIA is a POD-based framework that contextualizes predefined commands and actions while enabling the creation of new ones. It establishes a structured directory system for AI context management and implements a keyword-triggered action system.
 
 Key features:
 - **Context Management**: Organized storage of information for AI consumption
@@ -112,7 +112,7 @@ Key features:
 ```json
 {
   "context_backup": [
-    "Create a folder inside 'instructa/src/backup/' named context_backup_[current date in epoch format]",
+    "Create a folder inside 'instructia/src/backup/' named context_backup_[current date in epoch format]",
     "Copy all files and folders from the 'context' folder to the folder created in the previous action to create a backup of the current context"
   ],
   "context_update": [
@@ -128,13 +128,13 @@ Key features:
 
 ## Internationalization
 
-Instructa supports multiple languages:
+InstructIA supports multiple languages:
 - English (United States) (en-US)
 - Portuguese (Brazil) (pt-BR)
 
 To change the language during installation:
 ```bash
-npm install instructa --language=en-GB
+npm install instructia --language=en-GB
 ```
 
 ## Development
@@ -146,14 +146,14 @@ npm install instructa --language=en-GB
 
 ### Setup
 
-To use Instructa in your project, simply install it via npm:
+To use InstructIA in your project, simply install it via npm:
 
 ```bash
 # Install with default language (en-US)
-npm install instructa
+npm install instructia
 
 # Or install with a specific language
-npm install instructa --language=pt-BR
+npm install instructia --language=pt-BR
 ```
 
 This will:
