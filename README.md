@@ -2,149 +2,19 @@
 
 A powerful Context Management System based on POD (Prompt-Oriented Development) for automating AI-driven instructions and actions.
 
-## Installation
-
-InstructIA is installed globally as a command-line tool:
-
-```bash
-npm install -g instructia
-```
-
-## Documentation
-
-The complete documentation is available at: [https://digitalfen.github.io/InstructIA/](https://digitalfen.github.io/InstructIA/)
-
-## Usage
-
-### Initialization
-
-To start using InstructIA, you need to initialize a new project. The `init` command will set up everything you need:
-
-```bash
-# Initialize with default language (en-US)
-instructia init
-
-# Initialize with specific language
-instructia init --language=pt-BR
-```
-
-#### Initialization Options
-
-- `--language`: Sets the project language (default: en-US)
-  ```bash
-  instructia init --language=pt-BR
-  ```
-
-### Project Structure
-
-After initialization, InstructIA will create the following directory structure:
-
-```
-your-project/
-├── prompts/           # Directory for your prompts
-├── actions/           # Directory for your actions
-├── config/            # Configuration files
-└── instructia.json     # Main configuration file
-```
-
-### Prompt Development
-
-Create your prompts in the `prompts/` directory:
-
-```typescript
-// prompts/my-prompt.ts
-export const prompt = {
-  name: "my-prompt",
-  description: "Description of my prompt",
-  template: `
-    You are an assistant specialized in {topic}.
-    Please help with: {question}
-  `
-};
-```
-
-### Action Development
-
-Create your actions in the `actions/` directory:
-
-```typescript
-// actions/my-action.ts
-export const action = {
-  name: "my-action",
-  description: "Description of my action",
-  execute: async (context) => {
-    // Action implementation
-    return result;
-  }
-};
-```
-
-## What is InstructIA?
-
-InstructIA is a framework that enables the creation of structured, modular, and reusable prompts for AI systems. It provides a standardized environment for managing context, executing predefined actions, and extending functionality through a keyword-based command system.
-
-The framework is particularly useful for IDEs with integrated AI capabilities (like Cursor and WindSurf), where it helps generate and manage context for AI consumption.
+## Key Features
+- **Context Management**: Organizes and stores information for AI consumption.
+- **Keyword Instructions**: Simple trigger system for executing predefined actions.
+- **Extensibility**: Framework for adding new commands and actions.
+- **Internationalization**: Support for multiple languages, including English and Portuguese.
 
 ## Core Concepts
+- **POD (Prompt-Oriented Development)**: A development paradigm focused on creating systems based on structured, modular, and reusable prompts.
+- **InstructIA Framework**: Contextualizes predefined commands and actions while enabling the creation of new ones.
 
-### POD (Prompt-Oriented Development)
+## Installation
 
-POD is a development paradigm centered on creating systems, frameworks, or agents based on structured, modular, and reusable prompts. It transforms textual instructions into logical context units, providing AI systems (or interpretive compilers) with a solid semantic foundation for code generation, behavior definition, or response formulation.
-
-Key aspects of POD:
-- **Structured Prompts**: Well-defined formats for instructions
-- **Modularity**: Reusable components that can be combined
-- **Context Management**: Organized storage and retrieval of information
-- **Semantic Clarity**: Clear meaning and purpose for each instruction
-
-### InstructIA Framework
-
-InstructIA is a POD-based framework that contextualizes predefined commands and actions while enabling the creation of new ones. It establishes a structured directory system for AI context management and implements a keyword-triggered action system.
-
-Key features:
-- **Context Management**: Organized storage of information for AI consumption
-- **Keyword Commands**: Simple trigger system for executing predefined actions
-- **Extensibility**: Framework for adding new commands and actions
-- **Internationalization**: Support for multiple languages
-
-## Default Instructions
-
-```json
-{
-  "context_backup": [
-    "Create a folder inside 'instructia/src/backup/' named context_backup_[current date in epoch format]",
-    "Copy all files and folders from the 'context' folder to the folder created in the previous action to create a backup of the current context"
-  ],
-  "context_update": [
-    "Execute the context_backup instruction",
-    "Read the content of `context-config.md` and based on the instructions contained therein, analyze each file and its data located in `src/data/` to generate `.md` files within the `context/` folder. Each generated `.md` file must be modularized by subject or functionality, have a clear structure with titles and subtitles, contain only useful, detailed, and well-written information for consumption by LLM, and when including raw data or interpretations of graphs and the like, use ASCII to create the necessary forms, tables, and graphs for explanations",
-    "Create a log file in the logs folder, with the date and time of creation in the name. Containing the names of files read to compose that context, the names of generated files, date and time of execution, as well as the prompts used in the process and the differences between the created context files and those from the last backup if it exists. (save the changed line number and example of before and after the change)"
-  ],
-  "help": [
-    "Explain what each command in this list is for and how to use it"
-  ]
-}
-```
-
-## Internationalization
-
-InstructIA supports multiple languages:
-- English (United States) (en-US)
-- Portuguese (Brazil) (pt-BR)
-
-To change the language during installation:
-```bash
-npm install instructia --language=en-GB
-```
-
-## Development
-
-### Prerequisites
-
-- Node.js (v14 or higher)
-- npm (v6 or higher)
-
-### Setup
+Installed globally as a command-line tool via npm.
 
 To use InstructIA in your project, simply install it via npm:
 
@@ -159,7 +29,24 @@ npm install instructia --language=pt-BR
 This will:
 1. Create the necessary directory structure
 2. Set up configuration files
-3. Configure the framework with your chosen language
+3. Configure the system with your chosen language
+
+## Default Instructions Usage
+InstructIA comes with a set of default instructions designed to streamline common tasks and enhance productivity. Here's a brief overview of what these instructions do:
+
+- **context_create-backup**: Creates a backup of the current context.
+- **context_load-backup**: Restores a selected backup.
+- **context_update**: Updates the context based on predefined configurations.
+- **context_reset**: Resets the current context, deleting all data except default files.
+- **context_summarize**: Generates a summary of context files.
+- **instruction_create**: Creates new custom instructions.
+- **instruction_delete**: Deletes existing custom instructions.
+- **instruction_edit**: Edits existing custom instructions.
+- **help**: Provides assistance on how to use the tool and its instructions.
+
+## Documentation
+
+The complete documentation is available at: [https://digitalfen.github.io/InstructIA/](https://digitalfen.github.io/InstructIA/)
 
 ### Contributing
 
@@ -177,4 +64,4 @@ MIT
 
 Created by Vinícius Maffioli from DigitalFen.
 
-This framework is free to use and modify. Feel free to use it in your projects, whether personal or commercial. 
+This framework is free to use and modify. Feel free to use it in your projects, whether personal or commercial.
