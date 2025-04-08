@@ -71,14 +71,11 @@ export async function install(options: InstallOptions) {
 
 // Normalize language code to match the format in SUPPORTED_LANGUAGES
 function normalizeLanguageCode(langCode: string): string {
-  // Split by hyphen and capitalize each part
-  const parts = langCode.split('-');
+  // Convert to lowercase and split by hyphen
+  const parts = langCode.toLowerCase().split('-');
   if (parts.length === 2) {
-    return `${parts[0].toLowerCase()}-${parts[1].toUpperCase()}`;
+    // Keep the second part in uppercase as per SUPPORTED_LANGUAGES format
+    return `${parts[0]}-${parts[1].toUpperCase()}`;
   }
   return langCode;
-}
-
-// Check command line arguments
-const language = process.env.npm_config_language || 'en-US';
-install({ language }); 
+} 

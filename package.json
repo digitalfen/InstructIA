@@ -1,16 +1,44 @@
 {
   "name": "instructa",
-  "version": "1.0.4",
+  "version": "1.0.18",
   "description": "A powerful framework based on POD (Prompt-Oriented Development) for automating AI-driven instructions and actions",
   "bin": {
     "instructa": "./dist/cli.js"
   },
   "scripts": {
     "build": "tsc",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "preinstall": "node -e \"if(!process.env.INIT_CWD) { console.error('Error: This package must be installed globally. Use: npm install -g instructa'); process.exit(1); }\""
   },
   "preferGlobal": true,
-  "keywords": ["pod", "prompt", "automation", "framework"],
+  "engines": {
+    "node": ">=14"
+  },
+  "keywords": [
+    "pod",
+    "prompt",
+    "automation",
+    "framework",
+    "cli",
+    "ai",
+    "artificial-intelligence",
+    "machine-learning",
+    "nlp",
+    "natural-language-processing",
+    "prompt-engineering",
+    "developer-tools",
+    "productivity",
+    "workflow",
+    "typescript",
+    "nodejs",
+    "command-line",
+    "terminal",
+    "i18n",
+    "internationalization",
+    "multilingual",
+    "pt-br",
+    "portuguese"
+  ],
   "author": "",
   "license": "MIT",
   "devDependencies": {
@@ -20,5 +48,13 @@
   "dependencies": {
     "fs-extra": "^11.2.0",
     "@types/fs-extra": "^11.0.4"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/digitalfen/Instructa"
+  },
+  "bugs": {
+    "url": "https://github.com/digitalfen/Instructa/issues"
+  },
+  "homepage": "https://github.com/digitalfen/Instructa#readme"
 } 
