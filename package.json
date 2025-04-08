@@ -1,6 +1,6 @@
 {
   "name": "instructa",
-  "version": "1.0.18",
+  "version": "1.0.21",
   "description": "A powerful framework based on POD (Prompt-Oriented Development) for automating AI-driven instructions and actions",
   "bin": {
     "instructa": "./dist/cli.js"

@@ -2,12 +2,6 @@
 
 A powerful framework based on POD (Prompt-Oriented Development) for automating AI-driven instructions and actions.
 
-## What is Instructa?
-
-Instructa is a framework that enables the creation of structured, modular, and reusable prompts for AI systems. It provides a standardized environment for managing context, executing predefined actions, and extending functionality through a keyword-based command system.
-
-The framework is particularly useful for IDEs with integrated AI capabilities (like Cursor and WindSurf), where it helps generate and manage context for AI consumption.
-
 ## Installation
 
 Instructa is installed globally as a command-line tool:
@@ -18,27 +12,74 @@ npm install -g instructa
 
 ## Usage
 
-After installing globally, you can use Instructa in any directory to set up the framework structure:
+### Initialization
+
+To start using Instructa, you need to initialize a new project. The `init` command will set up everything you need:
 
 ```bash
-# Create structure with default language (en-US)
-instructa
+# Initialize with default language (en-US)
+instructa init
 
-# Create structure with specific language
-instructa --language=pt-BR
+# Initialize with specific language
+instructa init --language=pt-BR
 ```
 
-The command will create the following directory structure:
+#### Initialization Options
+
+- `--language`: Sets the project language (default: en-US)
+  ```bash
+  instructa init --language=pt-BR
+  ```
+
+### Project Structure
+
+After initialization, Instructa will create the following directory structure:
+
 ```
-project/
-├── context/              # Processed .md files for AI consumption
-│   └── instructions/     # Instructions that AI can use
-├── src/
-│   ├── data/            # Raw data for processing
-│   ├── config/          # Custom configurations and instructions
-│   └── backup/          # Context backups
-└── logs/                # Operation logs
+your-project/
+├── prompts/           # Directory for your prompts
+├── actions/           # Directory for your actions
+├── config/            # Configuration files
+└── instructa.json     # Main configuration file
 ```
+
+### Prompt Development
+
+Create your prompts in the `prompts/` directory:
+
+```typescript
+// prompts/my-prompt.ts
+export const prompt = {
+  name: "my-prompt",
+  description: "Description of my prompt",
+  template: `
+    You are an assistant specialized in {topic}.
+    Please help with: {question}
+  `
+};
+```
+
+### Action Development
+
+Create your actions in the `actions/` directory:
+
+```typescript
+// actions/my-action.ts
+export const action = {
+  name: "my-action",
+  description: "Description of my action",
+  execute: async (context) => {
+    // Action implementation
+    return result;
+  }
+};
+```
+
+## What is Instructa?
+
+Instructa is a framework that enables the creation of structured, modular, and reusable prompts for AI systems. It provides a standardized environment for managing context, executing predefined actions, and extending functionality through a keyword-based command system.
+
+The framework is particularly useful for IDEs with integrated AI capabilities (like Cursor and WindSurf), where it helps generate and manage context for AI consumption.
 
 ## Core Concepts
 
@@ -91,51 +132,6 @@ To change the language during installation:
 ```bash
 npm install instructa --language=en-GB
 ```
-
-## Usage
-
-Instructa is designed to be used during your conversations with AI in IDEs like Cursor or WindSurf. It works as a keyword trigger system:
-
-### How it Works
-
-1. During your conversation with the AI, you can use keywords to trigger specific actions:
-   ```
-   instructa [keyword]
-   ```
-
-2. The AI will recognize these keywords and execute the corresponding actions defined in your instructions.
-
-### Example: Using the Help Keyword
-
-When chatting with the AI, you can type:
-```
-instructa help
-```
-
-The AI will:
-1. Recognize this as a keyword trigger
-2. Read the instructions from `context/instructions/default-instructions.md`
-3. Find the "help" keyword and its associated action
-4. Execute the action: "explain what each command in this list is for and how to use it"
-5. Respond with something like:
-   ```
-   Available keywords and their actions:
-   
-   context_backup:
-   - Creates a backup of your current context
-   - Saves it in 'src/backup/' with timestamp
-   - Useful for preserving your work before major changes
-   
-   context_update:
-   - Creates a backup first (using context_backup)
-   - Analyzes files in 'src/data/'
-   - Generates new .md files in 'context/'
-   - Creates detailed logs of changes
-   
-   help:
-   - Shows this help message
-   - Explains all available keywords and their actions
-   ```
 
 ## Development
 
