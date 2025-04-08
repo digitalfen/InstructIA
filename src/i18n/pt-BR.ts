@@ -72,7 +72,7 @@ O arranjo das instruções com suas frases-chave e ações será feito utilizand
     "Substituir o conteúdo da instrução pelo novo conteúdo fornecido, mantendo o resto do arquivo intacto",
     "Criar um arquivo de log na pasta 'logs' com o nome da instrução, data e hora de criação no nome. O log deve conter o nome da instrução editada, o conteúdo anterior, o novo conteúdo, data e hora de execução"
   ],
-  "ajuda": [
+  "help": [
     "Explicar para que serve a ferramenta Instructa e como utilizá-la",
     "Listar as instruções disponíveis e perguntar se o usuário quer saber sobre alguma delas",
     "Se quiser saber sobre uma ou mais, explicar sobre as instruções"

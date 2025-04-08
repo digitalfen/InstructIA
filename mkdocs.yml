@@ -1,57 +1,54 @@
-site_name: Instructa Framework
-site_description: A powerful framework based on POD (Prompt-Oriented Development) for automating AI-driven instructions and actions
-site_author: DigitalFen
-site_url: https://github.com/digitalfen/Instructa
+site_name: InstructIA
+site_description: A powerful Context Management System based on POD (Prompt-Oriented Development)
+site_author: Vinícius Maffioli
+site_url: https://digitalfen.github.io/InstructIA/
 
 theme:
   name: material
-  palette:
-    - scheme: default
-      primary: indigo
-      accent: indigo
-      toggle:
-        icon: material/brightness-7
-        name: Switch to dark mode
-    - scheme: slate
-      primary: indigo
-      accent: indigo
-      toggle:
-        icon: material/brightness-4
-        name: Switch to light mode
-
-markdown_extensions:
-  - pymdownx.highlight
-  - pymdownx.superfences
-  - pymdownx.tabbed
-  - pymdownx.arithmatex
-  - pymdownx.emoji
-  - pymdownx.tasklist
-  - pymdownx.snippets
-  - pymdownx.details
-  - admonition
-  - footnotes
-  - toc:
-      permalink: true
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.highlight
+    - search.suggest
+    - search.share
 
 nav:
-  - Home: index.md
-  - Getting Started:
-    - Installation: getting-started/installation.md
-    - Quick Start: getting-started/quick-start.md
-    - Project Structure: getting-started/project-structure.md
-  - Core Concepts:
-    - POD Development: core-concepts/pod-development.md
-    - Context Management: core-concepts/context-management.md
-    - Keyword Commands: core-concepts/keyword-commands.md
-  - Features:
-    - Prompts: features/prompts.md
-    - Actions: features/actions.md
-    - Internationalization: features/internationalization.md
-  - Advanced:
-    - Custom Instructions: advanced/custom-instructions.md
-    - Extending the Framework: advanced/extending.md
-  - API Reference:
-    - CLI Commands: api-reference/cli-commands.md
-    - Configuration: api-reference/configuration.md
-  - Contributing: contributing.md
-  - License: license.md 
+  - Home: 
+    - Overview: index.md
+    - Key Features: key_features.md
+    - Core Concepts: core_concepts.md
+  - Usage:
+    - Overview: usage.md
+    - Installation: installation.md
+    - Default Instructions: default_instructions.md
+    - Creating Custom Instructions: custom_instructions.md
+  - License: license.md
+
+markdown_extensions:
+  - admonition
+  - codehilite
+  - footnotes
+  - meta
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tabbed
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde 
