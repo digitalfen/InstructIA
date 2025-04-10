@@ -1,0 +1,11 @@
+{
+  "readmeContent": "# Framework Instructia\n\nFramework baseado em POD (Prompt-Oriented Development) para automação de instruções.\n\n## Estrutura de Diretórios\n\n- `context/`: Contém arquivos .mdc processados prontos para uso como contexto\n- `data/`: Arquivos brutos (PDFs, textos, planilhas, etc)\n- `config/`: Arquivos .mdc com instruções personalizadas\n- `backup/`: Backups de contexto e outros arquivos\n- `context/instructions/`: Instruções acionadas por palavras-chave\n\n## Utilização\n\nPara executar uma instrução, use o formato:\n`instructia [frase-chave]`\n\nExemplo: `instructia ajuda`",
+  "contextConfigContent": "# Configuração de Contexto\n\nEste arquivo define as regras e configurações para geração de contexto.\n\n## Estrutura\n\n- Cada arquivo deve ser modularizado por assunto ou funcionalidade\n- Use títulos e subtítulos para organizar o conteúdo\n- Inclua apenas informações úteis e bem escritas\n- Para dados brutos ou interpretações de gráficos, use ASCII para criar tabelas e gráficos\n\n## Formato\n\n- Use Markdown para formatação\n- Mantenha o texto claro e objetivo\n- Inclua exemplos quando relevante\n- Documente todas as dependências e pré-requisitos",
+  "installationSuccess": "O Instructia foi instalado com sucesso! Para que o Instructia funcione, você deve incluir a pasta gerada 'instructia/context' no contexto da LLM usada pela sua IDE com IA integrada.",
+  "installationError": "Erro durante a instalação:",
+  "startingInstallation": "Iniciando a instalação do Instructia...",
+  "directoryCreated": "Diretório criado:",
+  "installationFileMoved": "Arquivo de instalação movido com sucesso",
+  "errorMovingInstallationFile": "Erro ao mover arquivo de instalação:",
+  "directoryStructureCreated": "Estrutura de diretórios criada com sucesso!"
+} 

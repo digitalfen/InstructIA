@@ -2,8 +2,8 @@
 
 This guide provides an overview of how to use InstructIA effectively.
 
-!!! warning "Important Note on LLM Integration"
-    InstructIA is designed to be used **in conjunction with a Large Language Model (LLM)** integrated into your IDE (like VS Code with Copilot or Cursor) or an external LLM management tool (like Ollama with a frontend) that allows you to easily include the `instructia/context/` folder (created during initialization) in the LLM's context window. The natural language prompts within this `context` folder are meant to be processed by an LLM to drive actions and generate responses. InstructIA itself manages the context structure and provides the command triggers, but the LLM performs the interpretation and execution based on the prompts.
+!!! warning "Important Note on IDE Support"
+    InstructIA is designed to support multiple development environments. Currently, **Cursor IDE** is the first supported environment, but we are actively working to expand support to other popular IDEs like VS Code, JetBrains, and other development environments. Stay tuned for updates on when new environments will be supported.
 
 ## Getting Started
 
@@ -20,15 +20,20 @@ For detailed instructions on each step, refer to the specific sections in the na
 All InstructIA commands follow this pattern:
 
 ```bash
-instructia <keyword>
+instructia <command> [options]
 ```
 
-Where `<keyword>` is the instruction you want to execute. For example:
+Where `<command>` is one of the available commands:
 
 ```bash
+# Initialize environment (currently supports cursor)
+instructia init cursor [--language=<lang>]
+
+# Show help
 instructia help
-instructia context_create-backup
-instructia instruction_create
+
+# Show version
+instructia version
 ```
 
 ## Documentation Structure

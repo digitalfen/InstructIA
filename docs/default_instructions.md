@@ -1,21 +1,88 @@
-# Default Instructions
+# Base Instructions
 
-InstructIA comes with a set of default instructions (keyword triggers) designed to streamline common tasks. Use them by running `instructia <keyword>`:
+InstructIA comes with a set of base instructions that help you manage your context and rules. These instructions are available by default and can be extended with custom instructions.
 
-!!! info "Understanding Instruction Logic"
-    The exact sequence of actions performed by each default instruction is defined by natural language prompts stored within the `instructia/context/instructions/` and `instructia/context/actions/` directories, specifically in the subfolder for your chosen language (e.g., `en-US/`). To understand precisely how an instruction works, you can read the corresponding prompt files.
+## Available Instructions
 
-## Context Management
+### Context Management
+- `update context`: Update the context with new files or directories
+- `reset context`: Reset the current context to its initial state
+- `summarize context`: Generate a summary of all context files
 
--   **`instructia context_create-backup`**: Creates a timestamped backup of the entire `instructia/context/` directory (excluding the `backups/` folder itself) within `instructia/context/backups/`.
--   **`instructia context_load-backup`**: Lists available backups and prompts the user to select one to restore. It replaces the current `instructia/context/` (excluding `backups/`) with the contents of the chosen backup.
--   **`instructia context_update`**: (Functionality depends on specific action prompts) Typically used to update context elements based on external sources or predefined configurations.
--   **`instructia context_reset`**: Resets the `instructia/context/` by deleting user-added instructions, actions, and potentially other context data, reverting to the default state provided during installation.
--   **`instructia context_summarize`**: (Functionality depends on specific action prompts) Generally designed to analyze context files (like instructions or documents) within `instructia/context/` and generate a summary, often using an AI model.
+### Instruction Management
+- `create instruction`: Create a new custom instruction
+- `delete instruction`: Remove an existing custom instruction
+- `edit instruction`: Modify an existing custom instruction
+- `list instructions`: List all available instructions (default and custom)
 
-## Instruction Management
+### Rule Management
+- `create rule`: Create a new development rule
+- `delete rule`: Remove an existing rule
+- `edit rule`: Modify an existing rule
+- `list rules`: List all available rules with their details
 
--   **`instructia instruction_create`**: Guides the user through creating a new custom keyword instruction. See the section below for details.
--   **`instructia instruction_delete`**: Prompts the user to select an existing custom instruction to delete from `instructia/context/instructions/`.
--   **`instructia instruction_edit`**: Prompts the user to select an existing custom instruction within `instructia/context/instructions/` to edit its associated action prompts.
--   **`instructia help`**: Provides assistance on how to use the tool, lists available instructions, and offers guidance. 
+### Help
+- `help`: Show available commands and their usage
+
+## Usage Examples
+
+### Summarizing Context
+```bash
+instructia summarize context
+```
+The system will:
+- Read all `.mdc` and `.md` files in the context folder
+- Generate a clear and objective summary of each file
+- Focus on main topics, important concepts, and structures
+- Use language appropriate for LLM consumption
+
+### Listing Instructions
+```bash
+instructia list instructions
+```
+The system will show:
+- All available instructions
+- Brief description of each
+- Whether it's a default or custom instruction
+
+### Listing Rules
+```bash
+instructia list rules
+```
+The system will show:
+- All available rules
+- Description of each rule
+- Files the rule applies to
+- Whether the rule is always active
+
+### Creating a Rule
+```bash
+instructia create rule
+```
+The system will guide you through creating a new rule with:
+- A description of what the rule should do
+- A list of instructions (one per line)
+- Automatic file creation with proper formatting
+
+### Managing Instructions
+```bash
+instructia create instruction
+instructia delete instruction
+instructia edit instruction
+```
+These commands help you manage custom instructions for your project.
+
+### Context Operations
+```bash
+instructia update context
+instructia reset context
+```
+Use these commands to manage your project's context.
+
+## Best Practices
+
+- Use clear and descriptive names for instructions
+- Keep instructions focused on a single task
+- Document complex instructions
+- Review and update instructions regularly
+- Use rules to enforce development practices

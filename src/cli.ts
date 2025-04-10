@@ -1,56 +1,51 @@
 #!/usr/bin/env node
 
-import { install } from './install';
+import { Logger } from './utils/logger';
+import { commandManager } from './commands';
 
-// Parse command line arguments
+const logger = Logger.getInstance();
 const args = process.argv.slice(2);
-const command = args[0] || 'help';
-const params = new Map<string, string>();
 
-args.slice(1).forEach(arg => {
+// Parse arguments
+const params = new Map<string, string>();
+let command = 'help'; // Default command
+let subcommand: string | undefined;
+
+// Parse command and subcommand
+if (args.length > 0) {
+  const firstArg = args[0];
+  if (!firstArg.startsWith('-')) {
+    command = firstArg;
+    if (args.length > 1 && !args[1].startsWith('-')) {
+      subcommand = args[1];
+    }
+  } else if (firstArg === '--version' || firstArg === '-v') {
+    command = 'version';
+  } else if (firstArg === '--help' || firstArg === '-h') {
+    command = 'help';
+  }
+}
+
+// Parse options
+args.forEach(arg => {
   if (arg.startsWith('--')) {
     const [key, value] = arg.slice(2).split('=');
     params.set(key.toLowerCase(), value || 'true');
   }
 });
 
-// Get language from arguments or use default
-const language = params.get('language') || 'en-US';
+// Configure logger verbosity
+logger.setVerbose(params.get('verbose') === 'true');
 
-const showHelp = () => {
-  console.log(`
-Instructa CLI - POD (Prompt-Oriented Development) Framework
-
-Usage:
-  instructa [command] [options]
-
-Commands:
-  init         Create a new Instructa project
-  help         Show this help message
-
-Options:
-  --language=<lang>  Set project language [default: en-US]
-
-Examples:
-  instructa init
-  instructa init --language=pt-BR
-  `);
-  process.exit(0);
+// Prepare command options
+const options = {
+  environment: subcommand,
+  language: params.get('language') || 'en-US',
+  verbose: params.get('verbose') === 'true'
 };
 
-// Handle different commands
-switch (command.toLowerCase()) {
-  case 'init':
-    install({ language })
-      .then(() => process.exit(0))
-      .catch(error => {
-        console.error('Error during setup:', error);
-        process.exit(1);
-      });
-    break;
-  
-  case 'help':
-  default:
-    showHelp();
-    break;
-} 
+// Execute command
+commandManager.execute(command, options).catch(error => {
+  logger.error(error.message);
+  process.exit(1);
+}); 

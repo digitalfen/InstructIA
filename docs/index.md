@@ -1,36 +1,36 @@
 # InstructIA
 
-A powerful Context Management System based on POD (Prompt-Oriented Development) for automating AI-driven instructions and actions.
+A Context Management System for AI-driven instructions and actions.
 
 ## Overview
 
-InstructIA is a comprehensive framework designed to streamline the management of AI-driven instructions and actions through a structured, modular approach. It provides a robust system for organizing and executing predefined commands while maintaining flexibility for customization.
+InstructIA is designed to streamline the management of AI-driven instructions and actions through a structured approach. It provides a system for organizing and executing predefined commands while maintaining flexibility for customization.
 
 ## Quick Start
 
-To get started with InstructIA, install it via npm:
+To get started with InstructIA:
 
+1. Install it globally via npm:
 ```bash
-# Install with default language (en-US)
-npm install instructia
-
-# Or install with a specific language
-npm install instructia --language=pt-BR
+npm install -g instructia
 ```
 
-## Available Instructions
+2. Initialize for your IDE:
+```bash
+instructia init cursor
+```
 
-Here are the default instructions available out-of-the-box. Use them by running `instructia <command>`:
+Options:
+- `--language=<lang>`: Set project language (default: en-US)
+- `--verbose`: Show detailed logs during installation
 
-- **`instructia context_create-backup`**: Creates a backup of the current context.
-- **`instructia context_load-backup`**: Restores a selected backup.
-- **`instructia context_update`**: Updates the context based on predefined configurations.
-- **`instructia context_reset`**: Resets the current context.
-- **`instructia context_summarize`**: Generates a summary of context files.
-- **`instructia instruction_create`**: Creates new custom instructions.
-- **`instructia instruction_delete`**: Deletes existing custom instructions.
-- **`instructia instruction_edit`**: Edits existing custom instructions.
-- **`instructia help`**: Provides assistance on how to use the tool and its instructions.
+## Available Commands
+
+- **`instructia init <environment>`**: Initialize Instructia for a specific IDE environment
+  - Currently only `cursor` is supported as environment
+  - Support for more IDEs coming soon
+- **`instructia help`**: Show help information
+- **`instructia version`**: Show CLI version
 
 For more details, see the [Default Instructions](default_instructions.md) page.
 

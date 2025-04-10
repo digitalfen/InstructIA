@@ -17,21 +17,24 @@ This makes the `instructia` command available anywhere on your system.
 Navigate to the directory where you want to manage your AI context (e.g., your project folder) and run the `init` command:
 
 ```bash
-# Initialize with default language (en-US)
-instructia init
+# Initialize for Cursor IDE
+instructia init cursor
 
 # Or initialize with a specific language (e.g., Portuguese)
-instructia init --language=pt-BR
+instructia init cursor --language=pt-BR
 ```
 
-**What `instructia init` Does:**
+**What `instructia init cursor` Does:**
 
-Running the `instructia init` command performs the crucial setup within your current directory:
+Running the `instructia init cursor` command performs the crucial setup within your current directory:
 
 1.  **Creates Project Directory**: Creates the root directory named `instructia/`.
-2.  **Creates Subdirectories**: Sets up the core folder structure within `instructia/`, including the `context/` folder and its subdirectories (`actions`, `instructions`, `config`, etc.). For a detailed breakdown, see the [Directory Structure](directory_structure.md) page.
-3.  **Sets Up Configuration**: Initializes default configuration files within `instructia/context/config/`.
-4.  **Copies Default Instructions**: Populates `instructia/context/instructions/` and `instructia/context/actions/` with the default set of instructions and actions for the chosen language.
+2.  **Creates Subdirectories**: Sets up the core folder structure within `instructia/`, including:
+    - `context/`
+    - `context/instructions/`
+    - `context/data/`
+3.  **Sets Up Configuration**: Initializes default configuration files.
+4.  **Copies Default Instructions**: Populates `instructia/context/instructions/` with the default set of instructions.
 5.  **Sets Language**: Configures the system to use the specified language (or the default, en-US).
 
 ## Prerequisites
@@ -39,12 +42,12 @@ Running the `instructia init` command performs the crucial setup within your cur
 Ensure you have the following before proceeding:
 
 *   **Node.js & npm**: Required for the global installation (`npm install -g`). You need [Node.js](https://nodejs.org/) installed.
-*   **LLM Integration**: Required for *using* InstructIA effectively. Access to an LLM and a way to provide the `instructia/context/` folder as context.
+*   **Cursor IDE**: Currently, only Cursor IDE is supported. Support for more IDEs is planned for the future.
 
 ## Verification
 
 After global installation, you can verify the tool is available by checking its version:
 
 ```bash
-instructia --version
+instructia version
 ``` 

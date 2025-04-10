@@ -1,7 +1,7 @@
 site_name: InstructIA
-site_description: A powerful Context Management System based on POD (Prompt-Oriented Development)
-site_author: Vinícius Maffioli
-site_url: https://digitalfen.github.io/InstructIA/
+site_description: A Context Management System for AI-driven instructions and actions
+site_author: DigitalFen
+site_url: https://github.com/digitalfen/InstructIA
 
 theme:
   name: material
@@ -15,15 +15,16 @@ theme:
     - search.share
 
 nav:
-  - Home: 
-    - Overview: index.md
-    - Key Features: key_features.md
-    - Core Concepts: core_concepts.md
-  - Usage:
-    - Overview: usage.md
-    - Installation: installation.md
-    - Default Instructions: default_instructions.md
-    - Creating Custom Instructions: custom_instructions.md
+  - Home: index.md
+  - Installation: installation.md
+  - Usage Guide: usage.md
+  - Directory Structure: directory_structure.md
+  - Rules System: rules.md
+  - Base Instructions: default_instructions.md
+  - Custom Instructions: custom_instructions.md
+  - Core Concepts: core_concepts.md
+  - Key Features: key_features.md
+  - Contributing: contributing.md
   - License: license.md
 
 markdown_extensions:
@@ -51,4 +52,4 @@ markdown_extensions:
   - pymdownx.tabbed
   - pymdownx.tasklist:
       custom_checkbox: true
-  - pymdownx.tilde 
+  - pymdownx.tilde

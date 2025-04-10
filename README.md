@@ -34,16 +34,6 @@ This will:
 ## Default Instructions Usage
 InstructIA comes with a set of default instructions designed to streamline common tasks and enhance productivity. Here's a brief overview of what these instructions do:
 
-- **context_create-backup**: Creates a backup of the current context.
-- **context_load-backup**: Restores a selected backup.
-- **context_update**: Updates the context based on predefined configurations.
-- **context_reset**: Resets the current context, deleting all data except default files.
-- **context_summarize**: Generates a summary of context files.
-- **instruction_create**: Creates new custom instructions.
-- **instruction_delete**: Deletes existing custom instructions.
-- **instruction_edit**: Edits existing custom instructions.
-- **help**: Provides assistance on how to use the tool and its instructions.
-
 ## Documentation
 
 The complete documentation is available at: [https://digitalfen.github.io/InstructIA/](https://digitalfen.github.io/InstructIA/)
