@@ -1,47 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://github.com/digitalfen/Instructa/</loc>
+         <loc>https://github.com/digitalfen/InstructIA/</loc>
          <lastmod>2025-04-10</lastmod>
     </url>
     <url>
-         <loc>https://github.com/digitalfen/Instructa/contributing/</loc>
+         <loc>https://github.com/digitalfen/InstructIA/contributing/</loc>
          <lastmod>2025-04-10</lastmod>
     </url>
     <url>
-         <loc>https://github.com/digitalfen/Instructa/core_concepts/</loc>
+         <loc>https://github.com/digitalfen/InstructIA/core_concepts/</loc>
          <lastmod>2025-04-10</lastmod>
     </url>
     <url>
-         <loc>https://github.com/digitalfen/Instructa/credits/</loc>
+         <loc>https://github.com/digitalfen/InstructIA/credits/</loc>
          <lastmod>2025-04-10</lastmod>
     </url>
     <url>
-         <loc>https://github.com/digitalfen/Instructa/custom_instructions/</loc>
+         <loc>https://github.com/digitalfen/InstructIA/custom_instructions/</loc>
          <lastmod>2025-04-10</lastmod>
     </url>
     <url>
-         <loc>https://github.com/digitalfen/Instructa/default_instructions/</loc>
+         <loc>https://github.com/digitalfen/InstructIA/default_instructions/</loc>
          <lastmod>2025-04-10</lastmod>
     </url>
     <url>
-         <loc>https://github.com/digitalfen/Instructa/directory_structure/</loc>
+         <loc>https://github.com/digitalfen/InstructIA/directory_structure/</loc>
          <lastmod>2025-04-10</lastmod>
     </url>
     <url>
-         <loc>https://github.com/digitalfen/Instructa/installation/</loc>
+         <loc>https://github.com/digitalfen/InstructIA/installation/</loc>
          <lastmod>2025-04-10</lastmod>
     </url>
     <url>
-         <loc>https://github.com/digitalfen/Instructa/key_features/</loc>
+         <loc>https://github.com/digitalfen/InstructIA/key_features/</loc>
          <lastmod>2025-04-10</lastmod>
     </url>
     <url>
-         <loc>https://github.com/digitalfen/Instructa/license/</loc>
+         <loc>https://github.com/digitalfen/InstructIA/license/</loc>
          <lastmod>2025-04-10</lastmod>
     </url>
     <url>
-         <loc>https://github.com/digitalfen/Instructa/usage/</loc>
+         <loc>https://github.com/digitalfen/InstructIA/rules/</loc>
+         <lastmod>2025-04-10</lastmod>
+    </url>
+    <url>
+         <loc>https://github.com/digitalfen/InstructIA/usage/</loc>
          <lastmod>2025-04-10</lastmod>
     </url>
 </urlset>

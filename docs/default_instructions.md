@@ -85,4 +85,4 @@ Use these commands to manage your project's context.
 - Keep instructions focused on a single task
 - Document complex instructions
 - Review and update instructions regularly
-- Use rules to enforce development practices 
+- Use rules to enforce development practices

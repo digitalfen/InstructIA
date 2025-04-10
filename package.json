@@ -2,16 +2,13 @@
   "name": "instructia",
   "version": "1.1.0",
   "description": "A powerful framework based on POD (Prompt-Oriented Development) for automating AI-driven instructions and actions",
-  "main": "dist/index.js",
   "bin": {
     "instructia": "./dist/cli.js"
   },
   "scripts": {
-    "build": "tsc && npm run copy-files",
-    "copy-files": "node scripts/copy-files.js",
-    "start": "node dist/cli.js",
-    "install:global": "npm run build && npm install -g .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "prepublishOnly": "npm run build",
+    "preinstall": "node -e \"if(!process.env.INIT_CWD) { console.error('Error: This package must be installed globally. Use: npm install -g instructia'); process.exit(1); }\""
   },
   "preferGlobal": true,
   "engines": {
@@ -21,6 +18,7 @@
     "pod",
     "prompt",
     "automation",
+    "cms",
     "framework",
     "cli",
     "ai",
@@ -43,7 +41,7 @@
     "portuguese"
   ],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@types/node": "^20.11.24",
     "typescript": "^5.3.3"
@@ -54,10 +52,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/digitalfen/Instructa"
+    "url": "https://github.com/digitalfen/InstructIA"
   },
   "bugs": {
-    "url": "https://github.com/digitalfen/Instructa/issues"
+    "url": "https://github.com/digitalfen/InstructIA/issues"
   },
-  "homepage": "https://github.com/digitalfen/Instructa#readme"
+  "homepage": "https://github.com/digitalfen/InstructIA#readme",
+  "files": [
+    "dist",
+    "docs",
+    "LICENSE",
+    "README.md"
+  ]
 } 

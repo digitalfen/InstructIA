@@ -33,7 +33,6 @@ Running the `instructia init cursor` command performs the crucial setup within y
     - `context/`
     - `context/instructions/`
     - `context/data/`
-    - `context/backup/`
 3.  **Sets Up Configuration**: Initializes default configuration files.
 4.  **Copies Default Instructions**: Populates `instructia/context/instructions/` with the default set of instructions.
 5.  **Sets Language**: Configures the system to use the specified language (or the default, en-US).

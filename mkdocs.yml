@@ -1,37 +1,18 @@
 site_name: InstructIA
 site_description: A Context Management System for AI-driven instructions and actions
 site_author: DigitalFen
-site_url: https://github.com/digitalfen/Instructa
+site_url: https://github.com/digitalfen/InstructIA
 
 theme:
   name: material
-  palette:
-    - scheme: default
-      primary: indigo
-      accent: indigo
-      toggle:
-        icon: material/brightness-7
-        name: Switch to dark mode
-    - scheme: slate
-      primary: indigo
-      accent: indigo
-      toggle:
-        icon: material/brightness-4
-        name: Switch to light mode
-
-markdown_extensions:
-  - pymdownx.highlight
-  - pymdownx.superfences
-  - pymdownx.tabbed
-  - pymdownx.arithmatex
-  - pymdownx.emoji
-  - pymdownx.tasklist
-  - pymdownx.snippets
-  - pymdownx.details
-  - admonition
-  - footnotes
-  - toc:
-      permalink: true
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.highlight
+    - search.suggest
+    - search.share
 
 nav:
   - Home: index.md
@@ -44,4 +25,31 @@ nav:
   - Core Concepts: core_concepts.md
   - Key Features: key_features.md
   - Contributing: contributing.md
-  - License: license.md 
+  - License: license.md
+
+markdown_extensions:
+  - admonition
+  - codehilite
+  - footnotes
+  - meta
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tabbed
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
