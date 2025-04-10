@@ -1,6 +1,6 @@
 {
   "name": "instructia",
-  "version": "1.0.21",
+  "version": "1.1.0",
   "description": "A powerful framework based on POD (Prompt-Oriented Development) for automating AI-driven instructions and actions",
   "main": "dist/index.js",
   "bin": {
