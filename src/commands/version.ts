@@ -1,4 +1,4 @@
-import { Command } from './types';
+import { Command } from './index';
 import { readFileSync } from 'fs';
 import { join } from 'path';
 import { Logger } from '../utils/logger';

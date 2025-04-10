@@ -6,7 +6,7 @@ import { Logger } from '../utils/logger';
 const logger = Logger.getInstance();
 
 interface InstallerOptions {
-  language: string;
+  language?: string;
 }
 
 /**
@@ -14,11 +14,14 @@ interface InstallerOptions {
  * Responsible for configuring Instructia for use with Cursor
  */
 export async function installCursor(options: InstallerOptions) {
+  // Use default language if not provided
+  const language = options.language || 'en-US';
+  
   // Normalize language code to match the format in SUPPORTED_LANGUAGES
-  const normalizedLanguage = normalizeLanguageCode(options.language);
+  const normalizedLanguage = normalizeLanguageCode(language);
 
   if (!isValidLanguage(normalizedLanguage)) {
-    logger.error(`Unsupported language: ${options.language}`);
+    logger.error(`Unsupported language: ${language}`);
     logger.info('Supported languages:');
     Object.entries(SUPPORTED_LANGUAGES).forEach(([code, name]) => {
       logger.info(`- ${code} (${name})`);

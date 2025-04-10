@@ -1,4 +1,4 @@
-import { Command, CommandManager } from './types';
+import { Command, CommandManager } from './index';
 import { getSupportedEnvironments } from '../bin';
 import { Logger } from '../utils/logger';
 import chalk from 'chalk';

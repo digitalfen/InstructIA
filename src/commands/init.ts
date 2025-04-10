@@ -1,5 +1,5 @@
-import { Command, CommandOptions } from './types';
-import { getInstaller, isInstallerAvailable } from '../bin';
+import { Command, CommandOptions } from './index';
+import { getInstaller, isInstallerAvailable, InstallerOptions } from '../bin';
 import { Logger } from '../utils/logger';
 
 export const initCommand: Command = {
@@ -35,6 +35,6 @@ export const initCommand: Command = {
       throw new Error(`Installer not found for environment: ${environment}`);
     }
 
-    await installer(options);
+    await installer({ language: options.language });
   }
 }; 

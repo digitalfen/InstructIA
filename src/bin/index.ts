@@ -1,7 +1,7 @@
 import { installCursor } from './cursor-installer';
 
 export interface InstallerOptions {
-  language: string;
+  language?: string;
 }
 
 export type InstallerFunction = (options: InstallerOptions) => Promise<void>;
