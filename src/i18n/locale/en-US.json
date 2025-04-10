@@ -1,0 +1,11 @@
+{
+  "readmeContent": "# Instructia Framework\n\nFramework based on POD (Prompt-Oriented Development) for instruction automation.\n\n## Directory Structure\n\n- `context/`: Contains processed .mdc files ready for use as context\n- `data/`: Raw files (PDFs, texts, spreadsheets, etc)\n- `config/`: .mdc files with custom instructions\n- `backup/`: Backups of context and other files\n- `context/instructions/`: Instructions triggered by keywords\n\n## Usage\n\nTo execute an instruction, use the format:\n`instructia [key-phrase]`\n\nExample: `instructia help`",
+  "contextConfigContent": "# Context Configuration\n\nThis file defines the rules and settings for context generation.\n\n## Structure\n\n- Each file should be modularized by subject or functionality\n- Use titles and subtitles to organize content\n- Include only useful and well-written information\n- For raw data or graph interpretations, use ASCII to create tables and graphs\n\n## Format\n\n- Use Markdown for formatting\n- Keep text clear and objective\n- Include examples when relevant\n- Document all dependencies and prerequisites",
+  "installationSuccess": "Instructia has been successfully installed! To make Instructia work, you must include the generated 'instructia/context' folder in the context of the LLM used by your AI-integrated IDE.",
+  "installationError": "Error during installation:",
+  "startingInstallation": "Starting Instructia installation...",
+  "directoryCreated": "Directory created:",
+  "installationFileMoved": "Installation file moved successfully",
+  "errorMovingInstallationFile": "Error moving installation file:",
+  "directoryStructureCreated": "Directory structure created successfully!"
+} 

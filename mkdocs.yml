@@ -1,5 +1,5 @@
-site_name: Instructa Framework
-site_description: A powerful framework based on POD (Prompt-Oriented Development) for automating AI-driven instructions and actions
+site_name: InstructIA
+site_description: A Context Management System for AI-driven instructions and actions
 site_author: DigitalFen
 site_url: https://github.com/digitalfen/Instructa
 
@@ -35,23 +35,13 @@ markdown_extensions:
 
 nav:
   - Home: index.md
-  - Getting Started:
-    - Installation: getting-started/installation.md
-    - Quick Start: getting-started/quick-start.md
-    - Project Structure: getting-started/project-structure.md
-  - Core Concepts:
-    - POD Development: core-concepts/pod-development.md
-    - Context Management: core-concepts/context-management.md
-    - Keyword Commands: core-concepts/keyword-commands.md
-  - Features:
-    - Prompts: features/prompts.md
-    - Actions: features/actions.md
-    - Internationalization: features/internationalization.md
-  - Advanced:
-    - Custom Instructions: advanced/custom-instructions.md
-    - Extending the Framework: advanced/extending.md
-  - API Reference:
-    - CLI Commands: api-reference/cli-commands.md
-    - Configuration: api-reference/configuration.md
+  - Installation: installation.md
+  - Usage Guide: usage.md
+  - Directory Structure: directory_structure.md
+  - Rules System: rules.md
+  - Base Instructions: default_instructions.md
+  - Custom Instructions: custom_instructions.md
+  - Core Concepts: core_concepts.md
+  - Key Features: key_features.md
   - Contributing: contributing.md
   - License: license.md 

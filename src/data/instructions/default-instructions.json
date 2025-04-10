@@ -1,0 +1,85 @@
+{
+  "help": [
+    "Send 'help' to see available commands"
+  ],
+  "update context": [
+    "The user must inform a directory or file to be read and processed, ask if necessary",
+    "Ask to user about how the files should be readed and processed, any specific format or structure to be followed, etc.",
+    "Read the content of `context-config.mdc` for aditional instructions and, based on the instructions contained in it plus the ones provided by the user, analyze the file or each file in given directory and its data located in `src/data/` to generate `.mdc` files inside the `context/` folder. Each generated `.mdc` file must be modularized by subject or functionality, have a clear structure with titles and subtitles, contain only useful, detailed and well-written information for consumption by LLM. When including raw data or interpretations of graphs and the like, use ASCII to create the necessary forms, tables and graphs for explanations",
+    "Create a log file in the 'logs' folder with the instruction name, date and time of creation in the name. The log should contain the names of the files read to compose the context, the names of the generated files, date and time of execution, the prompts used in the process, and the differences between the created context files and those from the last backup if it exists (save the changed line number and example of before and after the change)"
+  ],
+  "reset context": [
+    "Inform the user that this action will delete the entire current context and create a new one",
+    "Delete all files and folders in the 'instructia/context' folder, except for the files created during the installation of this package ('/context.mdc' and '/instructions/default-instructions.mdc'), but delete any changes made to these files"
+  ],
+    "summarize context": [
+    "Read all files with `.mdc` and `.md` extension directly located in the `instructia/context` folder, ignoring subfolders",
+    "For each file, generate a clear, objective and faithful textual summary of the content present. The summary should capture the main topics, important concepts and explained structures, using language appropriate for consumption by LLMs",
+    "Unify all summaries into a single continuous text, well structured, separated by sections with titles that correspond to the original file name (without the `.mdc` extension)",
+    "Save the unified summary in a new file called `context_summary.mdc` inside the `instructia/context/` folder",
+    "Create a log file in the `logs` folder with the instruction name, date and time of creation in the name. The log should contain the names of the summarized files, total number of lines read, and the name of the generated output file"
+  ],
+  "create instruction": [
+    "If it doesn't exist, create a file in 'instructia/context/instructions/' called 'custom_instructions.mdc' (use 'default_instructions.mdc' as a base)",
+    "Ask the user to provide the instructions they want to add to the 'custom_instructions.mdc' file in JSON list format and show an example of how the list should be formatted, based on the content of the 'default_instructions.mdc' file (use 'help' as an example)",
+    "Validate if the received instructions don't have the same identifier as the instructions contained in 'default_instructions.mdc' and in 'custom_instructions.mdc'",
+    "If they don't, add them to the instruction list. If an instruction with the same name already exists, inform the user that the instruction already exists and ask them to choose another name",
+    "Create a log file in the 'logs' folder with the instruction name, date and time of creation in the name. The log should contain the received instructions and the ones that were added"
+  ],
+  "delete instruction": [
+    "Check if the file 'instructia/context/instructions/custom_instructions.mdc' exists. If it doesn't, inform the user that there are no custom instructions to be deleted",
+    "Ask the user for the name of the custom instruction they want to delete",
+    "Check if the informed instruction is present in the 'custom_instructions.mdc' file. If it's not, inform the user that the instruction was not found",
+    "Remove the instruction from the file, preserving the markdown structure and ensuring that no other instruction is affected",
+    "Create a log file in the 'logs' folder with the instruction name, date and time of creation in the name. The log should contain the name of the deleted instruction, the removed content, date and time of execution"
+  ],
+  "edit instruction": [
+    "Check if the file 'instructia/context/instructions/custom_instructions.mdc' exists. If it doesn't, inform the user that there are no custom instructions to be edited",
+    "Ask the user for the name of the custom instruction they want to edit",
+    "Check if the instruction exists in the 'custom_instructions.mdc' file. If it's not, inform the user that the instruction was not found",
+    "Show the current content of the instruction and ask the user for the new version in the same format used (organized and objective markdown text)",
+    "Replace the instruction content with the new content provided, keeping the rest of the file intact",
+    "Create a log file in the 'logs' folder with the instruction name, date and time of creation in the name. The log should contain the name of the edited instruction, the previous content, the new content, date and time of execution"
+  ],
+  "list instructions": [
+    "List all available instructions from both 'default_instructions.mdc' and 'custom_instructions.mdc'",
+    "For each instruction, show:",
+    "- The instruction name",
+    "- A brief description of what it does",
+    "- Whether it's a default or custom instruction",
+    "Format the output in a clear and organized way"
+  ],
+  "create rule": [
+    "Ask the user for a short description of what the rule should do",
+    "Ask the user to provide the instructions for the rule (one per line, starting with '-')",
+    "Create a new file in '.cursor/rules/' using a sanitized version of the description as filename",
+    "Set the following defaults for the rule:",
+    "- globs: ['**/*'] (apply to all files)",
+    "- alwaysApply: true",
+    "Format the rule with the description as title and each instruction as a bullet point",
+    "Create a log file in the 'logs' folder with the instruction name, date and time of creation in the name. The log should contain the created file name"
+  ],
+  "delete rule": [
+    "List all available rule files in '.cursor/rules/'",
+    "Ask the user which rule they want to delete",
+    "Delete the selected rule file",
+    "Create a log file in the 'logs' folder with the instruction name, date and time of creation in the name. The log should contain the deleted file name"
+  ],
+  "edit rule": [
+    "List all available rule files in '.cursor/rules/'",
+    "Ask the user which rule they want to edit",
+    "Show the current content of the rule",
+    "Ask the user for the new content",
+    "Update the rule file with the new content",
+    "Create a log file in the 'logs' folder with the instruction name, date and time of creation in the name. The log should contain the edited file name"
+  ],
+  "list rules": [
+    "List all available rule files in '.cursor/rules/'",
+    "For each rule, show:",
+    "- The rule filename",
+    "- The rule description from the YAML frontmatter",
+    "- The glob patterns it applies to",
+    "- Whether it's always applied",
+    "Format the output in a clear and organized way"
+  ]
+} 
